@@ -1,0 +1,30 @@
+[
+    {
+        "nombre": "Mercurio",
+        "diametro": "4,880 km",
+        "distanciaDelSol": "57.91 millones de km",
+        "descripcion": "Mercurio es el planeta más cercano al sol y el más pequeño del sistema solar.",
+        "modelo": "mars.glb"
+    },
+    {
+        "nombre": "Venus",
+        "diametro": "12,104 km",
+        "distanciaDelSol": "108.2 millones de km",
+        "descripcion": "Venus es conocido como el planeta hermano de la Tierra debido a su tamaño simlar.",
+        "modelo": "venus.glb"
+    },
+    {
+        "nombre": "Tierra",
+        "diametro": "12,742 km",
+        "distanciaDelSol": "149.6 millones de km",
+        "descripcion": "La Tierra es el único planeta conocido que alberga vida.",
+        "modelo": "mercury.glb"
+    },
+    {
+        "nombre": "Marte",
+        "diametro": "6,779 km",
+        "distanciaDelSol": "227.9 millones de km",
+        "descripcion": "Marte es conocido como el planeta rojo debido a su color.",
+        "modelo": "earth1.glb"
+    }
+]
