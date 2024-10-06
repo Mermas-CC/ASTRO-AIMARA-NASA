@@ -7,6 +7,7 @@ import Header from './components/Header';
 import './index.css'; // Asegúrate de que la ruta sea correcta
 import PlanetSelector from './components/PlanetSelector';
 import ImageCarousel from './components/ImageCarousel';
+import VideoYT from './components/VideoYT';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
 
         <PlanetSelector />
         <ImageCarousel />
+        <VideoYT />
 
         <Footer />
       </div>

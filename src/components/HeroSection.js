@@ -15,7 +15,9 @@ const HeroSection = () => {
     >
       <Rocket className="w-24 h-24 text-blue-400 mb-8" />
       <h1 className="text-6xl font-bold mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>ASTRO AIMARA</h1>
-      <p className="text-xl mb-8">Embark on a journey beyond the stars</p>
+      <button className="mt-4 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300">
+        Jugar Ahora
+      </button>
       <motion.div
         className="absolute bottom-8"
         animate={{ y: [0, 10, 0] }}

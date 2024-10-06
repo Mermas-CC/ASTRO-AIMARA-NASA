@@ -38,12 +38,12 @@ const Header = () => {
       style={{ backgroundColor: getBackgroundColor() }}
     >
       <nav className="container mx-auto p-4 flex justify-between">
-        <h1 className="text-white text-2xl">Planetarium</h1>
+        <h1 className="text-white text-2xl">ASTRO AIMARA</h1>
         <nav className="hidden md:flex space-x-6">
-          <button className="text-white hover:text-blue-400 transition-colors">Missions</button>
-          <button className="text-white hover:text-blue-400 transition-colors">Data</button>
-          <button className="text-white hover:text-blue-400 transition-colors">Our Team</button>
-          <button className="text-white hover:text-blue-400 transition-colors">Explore Planets</button>
+          <button className="text-white hover:text-blue-400 transition-colors">Video</button>
+          <button className="text-white hover:text-blue-400 transition-colors">Exoplanetas</button>
+          <button className="text-white hover:text-blue-400 transition-colors">Trayecto</button>
+          <button className="text-white hover:text-blue-400 transition-colors">Datos curiosos</button>
         </nav>
       </nav>
     </header>
