@@ -18,7 +18,7 @@ const ImageCarousel = () => {
 
   return (
     <section className="py-20">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto px-4 text-center" id="datos">
         <h2 className="text-4xl font-bold mb-8">Galería de Imágenes</h2>
         <p className="text-gray-300 mb-4">
           Este carrusel muestra una selección de imágenes representativas. Navega a través de ellas utilizando los botones.

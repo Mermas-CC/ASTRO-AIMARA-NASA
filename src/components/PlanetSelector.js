@@ -18,7 +18,7 @@ const PlanetSelector = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white p-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white p-8" id="planetas">
       <div className="w-[85%] mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-300">
           Explorador de Exoplanetas

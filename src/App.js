@@ -15,12 +15,13 @@ const App = () => {
       <div className="min-h-screen bg-black text-white overflow-hidden">
       <Header />
       <HeroSection />
+      
       <div className="min-h-screen bg-gray-900 relative z-10">
-        <MissionsSection />
+      <VideoYT />
 
         <PlanetSelector />
         <ImageCarousel />
-        <VideoYT />
+
 
         <Footer />
       </div>

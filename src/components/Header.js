@@ -32,6 +32,22 @@ const Header = () => {
     return `rgb(${r}, ${g}, ${b})`;
   };
 
+  // Funciones para manejar el desplazamiento a las secciones
+  const scrollToVideo = () => {
+    const videoSection = document.getElementById('video');
+    videoSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToPlanets = () => {
+    const planetsSection = document.getElementById('planetas');
+    planetsSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToData = () => {
+    const dataSection = document.getElementById('datos');
+    dataSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full transition-all duration-500 z-50`}
@@ -40,10 +56,25 @@ const Header = () => {
       <nav className="container mx-auto p-4 flex justify-between">
         <h1 className="text-white text-2xl">ASTRO AIMARA</h1>
         <nav className="hidden md:flex space-x-6">
-          <button className="text-white hover:text-blue-400 transition-colors">Video</button>
-          <button className="text-white hover:text-blue-400 transition-colors">Exoplanetas</button>
+          <button 
+            onClick={scrollToVideo} 
+            className="text-white hover:text-blue-400 transition-colors"
+          >
+            Video
+          </button>
+          <button 
+            onClick={scrollToPlanets} // Agregado el manejador de clics para Exoplanetas
+            className="text-white hover:text-blue-400 transition-colors"
+          >
+            Exoplanetas
+          </button>
           <button className="text-white hover:text-blue-400 transition-colors">Trayecto</button>
-          <button className="text-white hover:text-blue-400 transition-colors">Datos curiosos</button>
+          <button 
+            onClick={scrollToData} // Agregado el manejador de clics para Datos curiosos
+            className="text-white hover:text-blue-400 transition-colors"
+          >
+            Datos curiosos
+          </button>
         </nav>
       </nav>
     </header>

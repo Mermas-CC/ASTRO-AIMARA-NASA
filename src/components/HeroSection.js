@@ -8,6 +8,12 @@ const HeroSection = () => {
   const scale = useTransform(scrollY, [0, 300], [1, 0.8]);
   const y = useTransform(scrollY, [0, 300], [0, -100]);
 
+  // Función para manejar el desplazamiento al video
+  const scrollToVideo = () => {
+    const videoSection = document.getElementById('video');
+    videoSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <motion.div
       className="h-screen flex flex-col items-center justify-center relative"
@@ -15,7 +21,12 @@ const HeroSection = () => {
     >
       <Rocket className="w-24 h-24 text-blue-400 mb-8" />
       <h1 className="text-6xl font-bold mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>ASTRO AIMARA</h1>
-      <button className="mt-4 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300">
+      
+      {/* Botón que desplaza hacia el video */}
+      <button 
+        onClick={scrollToVideo} 
+        className="mt-4 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
         Jugar Ahora
       </button>
       <motion.div
