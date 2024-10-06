@@ -1,5 +1,4 @@
 import React from 'react';
-import PlanetViewer from './components/PlanetViewer'; // Asegúrate de que esta ruta sea correcta
 import HeroSection from './components/HeroSection';
 import MissionsSection from './components/MissionsSection';
 
@@ -16,7 +15,7 @@ const App = () => {
       <HeroSection />
       <div className="min-h-screen bg-gray-900 relative z-10">
         <MissionsSection />
-        <PlanetViewer />
+
         <PlanetSelector />
 
         <Footer />
