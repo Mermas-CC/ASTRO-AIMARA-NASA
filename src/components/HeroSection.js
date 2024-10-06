@@ -14,7 +14,7 @@ const HeroSection = () => {
       style={{ opacity, scale, y }}
     >
       <Rocket className="w-24 h-24 text-blue-400 mb-8" />
-      <h1 className="text-6xl font-bold mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>SPACE EXPLORER</h1>
+      <h1 className="text-6xl font-bold mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>ASTRO AIMARA</h1>
       <p className="text-xl mb-8">Embark on a journey beyond the stars</p>
       <motion.div
         className="absolute bottom-8"
