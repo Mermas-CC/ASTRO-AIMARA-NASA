@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Globe } from 'lucide-react';
-import { Canvas, useLoader, useThree } from '@react-three/fiber';
+import { ChevronDown, Globe, Wifi, Battery } from 'lucide-react';
+import { Canvas, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from '@react-three/drei'; 
 import planetData from '../data/data_with_model.json';
@@ -20,7 +20,7 @@ const PlanetSelector = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="w-[85%] mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-300">
           Explorador de Exoplanetas
         </h1>
@@ -67,9 +67,27 @@ const PlanetSelector = () => {
               <PlanetInfo label="Distancia" value={`${selectedPlanet.sy_dist} parsecs`} />
             </div>
 
-            <div className="mt-8 w-full max-w-2xl aspect-[4/3] bg-gray-900 rounded-[40px] shadow-[0_10px_50px_rgba(0,0,0,0.3),inset_0_0_0_2px_rgba(255,255,255,0.1)] p-3 relative overflow-hidden mx-auto">
-              
-              {/* Pantalla */}
+            {/* Contenedor de la "tableta" con bordes redondeados */}
+            <div className="mt-8 w-full max-w-[90%] aspect-[4/3] bg-gray-900 rounded-[40px] shadow-[0_10px_50px_rgba(0,0,0,0.3),inset_0_0_0_2px_rgba(255,255,255,0.1)] p-3 relative overflow-hidden mx-auto">
+
+              {/* Barra de estado superior con íconos */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-full px-4 h-8 bg-gray-900 flex items-center justify-between text-white">
+                {/* Hora */}
+                <div className="text-sm ml-8">12:45</div>
+                {/* Íconos de Wifi y Batería */}
+                <div className="flex space-x-2 items-center mr-8">
+                  <Wifi className="w-5 h-5 text-white" />
+                  <Battery className="w-5 h-5 text-white" />
+                </div>
+              </div>
+
+              {/* Cámara simulada en la parte superior */}
+              <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-700 rounded-full shadow-md border-[2px] border-gray-500"></div>
+
+              {/* Botón inferior simulado */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-700 rounded-full shadow-inner border-[2px] border-gray-500"></div>
+
+              {/* Pantalla de la tableta */}
               <div className="w-full h-full rounded-[40px] overflow-hidden shadow-inner relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-20 pointer-events-none"></div>
 
@@ -85,6 +103,7 @@ const PlanetSelector = () => {
                 </div>
               </div>
 
+              {/* Icono decorativo en la esquina */}
               <div className="absolute bottom-6 right-6 text-gray-400 opacity-30">
                 <div className="w-10 h-10">🍏</div>
               </div>
@@ -112,11 +131,11 @@ function PlanetModel({ modelPath }) {
     <>
       <primitive object={model.scene} scale={1.5} />
       <pointLight
-        position={[1, 0, 0]} // Posición de la luz relativa al modelo
-        intensity={1.5} // Intensity of the light
-        distance={50} // Distance of light
-        decay={2} // Decay of the light
-        color={"#ffffff"} // Color of the light
+        position={[1, 0, 0]} 
+        intensity={1.5} 
+        distance={50} 
+        decay={2} 
+        color={"#ffffff"} 
       />
     </>
   );

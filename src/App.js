@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import './index.css'; // Asegúrate de que la ruta sea correcta
 import PlanetSelector from './components/PlanetSelector';
+import ImageCarousel from './components/ImageCarousel';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <MissionsSection />
 
         <PlanetSelector />
+        <ImageCarousel />
 
         <Footer />
       </div>
