@@ -19,14 +19,14 @@ const ImageCarousel = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 text-center" id="datos">
-        <h2 className="text-4xl font-bold mb-8">Galería de Imágenes</h2>
+        <h2 className="text-4xl font-bold mb-8">Image Gallery</h2>
         <p className="text-gray-300 mb-4">
-          Este carrusel muestra una selección de imágenes representativas. Navega a través de ellas utilizando los botones.
+          This carousel showcases a selection of representative images. Navigate through them using the buttons.
         </p>
         <div className="relative w-full max-w-2xl mx-auto overflow-hidden rounded-lg shadow-lg">
           <img
             src={images[currentIndex]}
-            alt={`Imagen ${currentIndex + 1}`}
+            alt={`Image ${currentIndex + 1}`}
             className="w-full h-auto transition-transform duration-500 ease-in-out transform"
           />
           <button
@@ -54,6 +54,7 @@ const ImageCarousel = () => {
       </div>
     </section>
   );
+  
 };
 
 export default ImageCarousel;

@@ -16,13 +16,13 @@ const Header = () => {
     };
   }, []);
 
-  // Calcular el color de fondo basado en el desplazamiento
+  // Calculate the background color based on scrolling
   const getBackgroundColor = () => {
-    const maxScroll = 300; // Ajusta este valor según tus necesidades
-    const percent = Math.min(scrollY / maxScroll, 1); // Normaliza el valor entre 0 y 1
+    const maxScroll = 300; // Adjust this value as needed
+    const percent = Math.min(scrollY / maxScroll, 1); // Normalize the value between 0 and 1
     
-    // Colores inicial y final en formato RGB
-    const startColor = { r: 0, g: 0, b: 0 }; // Negro
+    // Initial and final colors in RGB format
+    const startColor = { r: 0, g: 0, b: 0 }; // Black
     const endColor = { r: 31, g: 41, b: 55 }; // bg-gray-900 (RGB: 31, 41, 55)
 
     const r = Math.round(startColor.r + (endColor.r - startColor.r) * percent);
@@ -32,7 +32,7 @@ const Header = () => {
     return `rgb(${r}, ${g}, ${b})`;
   };
 
-  // Funciones para manejar el desplazamiento a las secciones
+  // Functions to handle scrolling to the sections
   const scrollToVideo = () => {
     const videoSection = document.getElementById('video');
     videoSection.scrollIntoView({ behavior: 'smooth' });
@@ -63,17 +63,17 @@ const Header = () => {
             Video
           </button>
           <button 
-            onClick={scrollToPlanets} // Agregado el manejador de clics para Exoplanetas
+            onClick={scrollToPlanets} // Added click handler for Exoplanets
             className="text-white hover:text-blue-400 transition-colors"
           >
-            Exoplanetas
+            Exoplanets
           </button>
-          <button className="text-white hover:text-blue-400 transition-colors">Trayecto</button>
+          <button className="text-white hover:text-blue-400 transition-colors">Path</button>
           <button 
-            onClick={scrollToData} // Agregado el manejador de clics para Datos curiosos
+            onClick={scrollToData} // Added click handler for Interesting Facts
             className="text-white hover:text-blue-400 transition-colors"
           >
-            Datos curiosos
+            Interesting Facts
           </button>
         </nav>
       </nav>

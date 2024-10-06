@@ -18,15 +18,15 @@ const PlanetSelector = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white p-8" id="planetas">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white p-8" id="planets">
       <div className="w-[85%] mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center text-blue-300">
-          Explorador de Exoplanetas
+          Exoplanet Explorer
         </h1>
         
         <div className="mb-8 relative">
           <label htmlFor="planet-select" className="block text-lg font-semibold mb-2 text-blue-200">
-            Selecciona un Planeta
+            Select a Planet
           </label>
           <div className="relative">
             <select
@@ -34,7 +34,7 @@ const PlanetSelector = () => {
               onChange={handlePlanetSelect}
               className="w-full bg-gray-800 text-white p-3 pr-10 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="">Selecciona un planeta...</option>
+              <option value="">Select a planet...</option>
               {planetData.map((planet) => (
                 <option key={planet.pl_name} value={planet.pl_name}>
                   {planet.pl_name}
@@ -46,75 +46,71 @@ const PlanetSelector = () => {
         </div>
 
         {selectedPlanet && (
-         <motion.div
-         initial={{ opacity: 0, y: 20 }}
-         animate={{ opacity: 1, y: 0 }}
-         transition={{ duration: 0.5 }}
-         className="bg-gray-800 rounded-lg p-6 shadow-lg"
-       >
-         <div className="mt-8 w-full max-w-[90%] bg-gray-900 rounded-[40px] shadow-[0_10px_50px_rgba(0,0,0,0.3),inset_0_0_0_2px_rgba(255,255,255,0.1)] p-3 relative overflow-hidden mx-auto mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-gray-800 rounded-lg p-6 shadow-lg"
+          >
+            <div className="mt-8 w-full max-w-[90%] bg-gray-900 rounded-[40px] shadow-[0_10px_50px_rgba(0,0,0,0.3),inset_0_0_0_2px_rgba(255,255,255,0.1)] p-3 relative overflow-hidden mx-auto mb-8">
        
-           {/* Barra de estado superior con íconos */}
-           <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-full px-4 h-8 bg-gray-900 flex items-center justify-between text-white">
-             <div className="text-sm ml-8">12:45</div>
-             <div className="flex space-x-2 items-center mr-8">
-               <Wifi className="w-5 h-5 text-white" />
-               <Battery className="w-5 h-5 text-white" />
-             </div>
-           </div>
+              {/* Top status bar with icons */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-full px-4 h-8 bg-gray-900 flex items-center justify-between text-white">
+                <div className="text-sm ml-8">12:45</div>
+                <div className="flex space-x-2 items-center mr-8">
+                  <Wifi className="w-5 h-5 text-white" />
+                  <Battery className="w-5 h-5 text-white" />
+                </div>
+              </div>
        
-           {/* Cámara simulada en la parte superior */}
-           <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-700 rounded-full shadow-md border-[2px] border-gray-500"></div>
+              {/* Simulated camera at the top */}
+              <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-700 rounded-full shadow-md border-[2px] border-gray-500"></div>
        
-           {/* Botón inferior simulado */}
-           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-700 rounded-full shadow-inner border-[2px] border-gray-500"></div>
+              {/* Simulated bottom button */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-700 rounded-full shadow-inner border-[2px] border-gray-500"></div>
        
-           {/* Nombre del planeta */}
-           <div className="flex items-center mb-4 mt-8 mx-4">
-             <Globe className="w-8 h-8 text-blue-400 mr-3" />
-             <h2 className="text-2xl font-bold text-blue-300">{selectedPlanet.pl_name}</h2>
-           </div>
+              {/* Planet name */}
+              <div className="flex items-center mb-4 mt-8 mx-4">
+                <Globe className="w-8 h-8 text-blue-400 mr-3" />
+                <h2 className="text-2xl font-bold text-blue-300">{selectedPlanet.pl_name}</h2>
+              </div>
        
-           {/* Div contenedor de dos columnas */}
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Two-column container */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
              
-             {/* Columna de la información con dos subcolumnas */}
-             <div className="grid grid-cols-1 gap-2 mx-4"> {/* Cambié gap-4 a gap-2 para mayor compresión */}
-               <PlanetInfo label="Método de Descubrimiento" value={selectedPlanet.discoverymethod} />
-               <PlanetInfo label="Período Orbital" value={`${selectedPlanet.pl_orbper} días`} />
-               <PlanetInfo label="Radio (Tierra)" value={selectedPlanet.pl_rade} />
-               <PlanetInfo label="Masa (Júpiter)" value={selectedPlanet.pl_bmassj} />
-               <PlanetInfo label="Excentricidad" value={selectedPlanet.pl_orbeccen} />
-               <PlanetInfo label="Logaritmo de Gravedad" value={selectedPlanet.st_logg} />
-               <PlanetInfo label="Distancia" value={`${selectedPlanet.sy_dist} parsecs`} />
-             </div>
+                {/* Information column with two sub-columns */}
+                <div className="grid grid-cols-1 gap-2 mx-4"> {/* Changed gap-4 to gap-2 for more compression */}
+                  <PlanetInfo label="Discovery Method" value={selectedPlanet.discoverymethod} />
+                  <PlanetInfo label="Orbital Period" value={`${selectedPlanet.pl_orbper} days`} />
+                  <PlanetInfo label="Radius (Earth)" value={selectedPlanet.pl_rade} />
+                  <PlanetInfo label="Mass (Jupiter)" value={selectedPlanet.pl_bmassj} />
+                  <PlanetInfo label="Eccentricity" value={selectedPlanet.pl_orbeccen} />
+                  <PlanetInfo label="Logarithm of Gravity" value={selectedPlanet.st_logg} />
+                  <PlanetInfo label="Distance" value={`${selectedPlanet.sy_dist} parsecs`} />
+                </div>
        
-             {/* Columna del modelo del planeta */}
-             <div className="p-4 h-[500px] overflow-hidden relative">
-               <Canvas className="w-full h-full rounded-lg">
-                 <ambientLight intensity={0.5} color={"#ffffff"} />
+                {/* Planet model column */}
+                <div className="p-4 h-[500px] overflow-hidden relative">
+                  <Canvas className="w-full h-full rounded-lg">
+                    <ambientLight intensity={0.5} color={"#ffffff"} />
        
-                 {/* Componente que maneja el modelo del planeta */}
-                 {selectedPlanet.modelo && <PlanetModel modelPath={selectedPlanet.modelo} />}
+                    {/* Component that handles the planet model */}
+                    {selectedPlanet.modelo && <PlanetModel modelPath={selectedPlanet.modelo} />}
        
-                 <OrbitControls />
-               </Canvas>
-             </div>
-           </div>
+                    <OrbitControls />
+                  </Canvas>
+                </div>
+              </div>
        
-           {/* Separación del margen inferior */}
-           <div className="mb-8"></div> {/* Agregado para separar el contenido del margen inferior */}
+              {/* Bottom margin separation */}
+              <div className="mb-8"></div> {/* Added to separate content from the bottom margin */}
        
-           {/* Icono decorativo en la esquina */}
-           <div className="absolute bottom-6 right-6 text-gray-400 opacity-30">
-             <div className="w-10 h-10">🍏</div>
-           </div>
-         </div>
-       </motion.div>
-       
-        
-        
-
+              {/* Decorative icon in the corner */}
+              <div className="absolute bottom-6 right-6 text-gray-400 opacity-30">
+                <div className="w-10 h-10">🍏</div>
+              </div>
+            </div>
+          </motion.div>
         )}
       </div>
     </div>
@@ -125,7 +121,7 @@ function PlanetInfo({ label, value }) {
   return (
     <div className="bg-gray-700 p-3 rounded-md">
       <p className="text-sm text-blue-200 mb-1">{label}</p>
-      <p className="font-semibold">{value || 'No disponible'}</p>
+      <p className="font-semibold">{value || 'Not available'}</p>
     </div>
   );
 }
