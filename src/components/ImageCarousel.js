@@ -19,9 +19,9 @@ const ImageCarousel = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 text-center" id="datos">
-        <h2 className="text-4xl font-bold mb-8">Image Gallery</h2>
+        <h2 className="text-4xl font-bold mb-8">Interesting Facts</h2>
         <p className="text-gray-300 mb-4">
-          This carousel showcases a selection of representative images. Navigate through them using the buttons.
+        Here is some fascinating information about exoplanets and their systems, based on data from NASA.
         </p>
         <div className="relative w-full max-w-2xl mx-auto overflow-hidden rounded-lg shadow-lg">
           <img
