@@ -20,30 +20,37 @@ const PlanetSelector = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white p-8" id="planetas">
       <div className="w-[85%] mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center text-blue-300">
-          Exoplanet Explorer
-        </h1>
-        
-        <div className="mb-8 relative">
-          <label htmlFor="planet-select" className="block text-lg font-semibold mb-2 text-blue-200">
-            Select a Planet
-          </label>
-          <div className="relative">
-            <select
-              id="planet-select"
-              onChange={handlePlanetSelect}
-              className="w-full bg-gray-800 text-white p-3 pr-10 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="">Select a planet...</option>
-              {planetData.map((planet) => (
-                <option key={planet.pl_name} value={planet.pl_name}>
-                  {planet.pl_name}
-                </option>
-              ))}
-            </select>
-            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-300" />
-          </div>
-        </div>
+      <div className="bg-gradient-to-b from-gray-900 to-black p-10 rounded-lg shadow-lg">
+  <h1 className="text-6xl font-extrabold mb-6 text-center text-blue-400 drop-shadow-lg tracking-tight leading-tight">
+    Unlock the Full Interface of the Game
+  </h1>
+  <p className="text-xl text-center text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+    Experience a sneak peek of the fully unlocked main interface after completing all missions and discovering every planet. Get ready for an immersive journey!
+  </p>
+
+</div>
+
+<div className="mb-8 relative">
+  <label htmlFor="planet-select" className="block text-lg font-semibold mb-2 text-blue-300">
+    Select a Planet
+  </label>
+  <div className="relative">
+    <select
+      id="planet-select"
+      onChange={handlePlanetSelect}
+      className="w-full bg-gray-900 text-white p-4 pr-12 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg transition ease-in-out duration-200 hover:bg-gray-800"
+    >
+      <option value="">Choose a planet...</option>
+      {planetData.map((planet) => (
+        <option key={planet.pl_name} value={planet.pl_name}>
+          {planet.pl_name}
+        </option>
+      ))}
+    </select>
+    <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-blue-400 pointer-events-none" />
+  </div>
+</div>
+
 
         {selectedPlanet && (
           <motion.div
