@@ -1,32 +1,48 @@
 import React from 'react';
 import HeroSection from './components/HeroSection';
 import MissionsSection from './components/MissionsSection';
-
 import Footer from './components/Footer';
 import Header from './components/Header';
-import './index.css'; // Asegúrate de que la ruta sea correcta
 import PlanetSelector from './components/PlanetSelector';
 import ImageCarousel from './components/ImageCarousel';
 import VideoYT from './components/VideoYT';
+import PlanetInfoPage from './components/PlanetInfoPage'; // Tu nueva página
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
+import './index.css'; // Asegúrate de que la ruta sea correcta
 
 const App = () => {
-    return (
-      <div className="min-h-screen bg-black text-white overflow-hidden">
-      <Header />
-      <HeroSection />
+  // Hook para obtener la ruta actual
+  const location = useLocation();
+
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Renderiza el Header solo si no estás en la página /planet-info */}
+      {location.pathname !== '/planet-info' && <Header />}
       
-      <div className="min-h-screen bg-gray-900 relative z-10">
-      <VideoYT />
+      <Routes>
+        {/* Ruta principal */}
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <VideoYT />
+            <PlanetSelector />
+            <ImageCarousel />
+            <Footer />
+          </>
+        } />
 
-        <PlanetSelector />
-        <ImageCarousel />
-
-
-        <Footer />
-      </div>
+        {/* Nueva página /planet-info */}
+        <Route path="/planet-info" element={<PlanetInfoPage />} />
+      </Routes>
     </div>
-    );
+  );
 };
 
-export default App;
+const AppWithRouter = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWithRouter;
