@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 
 const ImageCarousel = () => {
   const images = [
-    '392ee228-f966-4624-b14b-401a6f8c3fce.jpeg',
-    'ed1ed47d-808f-42f5-a0b4-47916778f58f.jpeg',
+    '1.png',
+    '2.png',
+    '3.png',
+    '4.png'
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
