@@ -1,4 +1,3 @@
-// src/components/HeroSection.js
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Rocket, ChevronDown } from 'lucide-react';
 
@@ -8,10 +7,9 @@ const HeroSection = () => {
   const scale = useTransform(scrollY, [0, 300], [1, 0.8]);
   const y = useTransform(scrollY, [0, 300], [0, -100]);
 
-  // Function to handle scrolling to the video
-  const scrollToVideo = () => {
-    const videoSection = document.getElementById('video');
-    videoSection.scrollIntoView({ behavior: 'smooth' });
+  // Function to redirect to the external link
+  const redirectToGame = () => {
+    window.location.href = "https://web-3d-astro-nasa.vercel.app/";
   };
 
   return (
@@ -22,9 +20,9 @@ const HeroSection = () => {
       <Rocket className="w-24 h-24 text-blue-400 mb-8" />
       <h1 className="text-6xl font-bold mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>ASTRO AIMARA</h1>
       
-      {/* Button that scrolls to the video */}
+      {/* Button that redirects to the game */}
       <button 
-        onClick={scrollToVideo} 
+        onClick={redirectToGame} 
         className="mt-4 px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-300"
       >
         Play Now
